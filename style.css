@@ -48,6 +48,16 @@ html, body {
     height: 100px;
     border-radius: 15px;
     border: 5px solid rgb(44, 44, 44);
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    font-size: 26px;
+}
+
+.display-text{
+    margin-right: 15px;
+    margin-top: 5px;
+    color: white;
 }
 
 .keys{
