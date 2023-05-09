@@ -468,6 +468,7 @@ ACBtn.addEventListener('click', () => {
 CBtn.addEventListener('click', () => {
     let inputValueAfterC = input1.value.slice(0, -1);
     input1.value=inputValueAfterC;
+    displayResult.innerHTML='';
 })
 
 
