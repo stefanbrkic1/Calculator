@@ -39,11 +39,18 @@ equalBtn.addEventListener('click', () => {
     resultStatus = true;
     secondOperand = Number(input1.value.substring(1));
     operate();
-    if (result.toString().includes('.')) {
-        displayResult.innerHTML = `=${result.toFixed(2)}`;
+    if(firstOperand===0 || secondOperand===0 && operator==='/'){
+        alert("Error: **! Can't divide with zero !**")
+        displayResult.innerHTML='';
+        input1.value='';
     }
-    else {
-        displayResult.innerHTML = `=${result}`;
+    else{
+        if (result.toString().includes('.')) {
+            displayResult.innerHTML = `=${result.toFixed(2)}`;
+        }
+        else {
+            displayResult.innerHTML = `=${result}`;
+        }
     }
 })
 //
