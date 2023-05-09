@@ -39,7 +39,12 @@ equalBtn.addEventListener('click', () => {
     resultStatus=true;
     secondOperand = Number(input1.value.substring(1));
     operate();
-    displayResult.innerHTML=`=${result}`;
+    if(result.toString().includes('.')){
+        displayResult.innerHTML=`=${result.toFixed(2)}`;
+    }
+    else{
+        displayResult.innerHTML=`=${result}`;
+    }
 })
 //
 
