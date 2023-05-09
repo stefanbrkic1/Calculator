@@ -45,7 +45,13 @@ equalBtn.addEventListener('click', () => {
 
 //DOBIJANJE PRVOG OPERANDA NAKON SELEKCIJE OPERATORA
 plusBtn.addEventListener('click', () => {
-    if(input1.value.slice(-1)==='.'){
+    if(resultStatus===true){
+        operator='+';
+        handleOperator();
+        firstOperand=result;
+        operatorStatus=true;
+    }
+    else if(input1.value.slice(-1)==='.'){
 
     }
     else{
@@ -57,7 +63,13 @@ plusBtn.addEventListener('click', () => {
 })
 
 minusBtn.addEventListener('click', () => {
-     if(input1.value.slice(-1)==='.'){
+    if(resultStatus===true){
+        operator='-';
+        handleOperator();
+        firstOperand=result;
+        operatorStatus=true;
+    }
+    else if(input1.value.slice(-1)==='.'){
         
     }
     else{
@@ -69,7 +81,13 @@ minusBtn.addEventListener('click', () => {
 })
 
 multiplyBtn.addEventListener('click', () => {
-    if(input1.value.slice(-1)==='.'){
+    if(resultStatus===true){
+        operator='*';
+        handleOperator();
+        firstOperand=result;
+        operatorStatus=true;
+    }
+    else if(input1.value.slice(-1)==='.'){
         
     }
     else{
@@ -81,19 +99,31 @@ multiplyBtn.addEventListener('click', () => {
 })
 
 divideBtn.addEventListener('click', () => {
-    if(input1.value.slice(-1)==='.'){
+    if(resultStatus===true){
+        operator='/';
+        handleOperator();
+        firstOperand=result;
+        operatorStatus=true;
+    }
+    else if(input1.value.slice(-1)==='.'){
         
     }
     else{
         firstOperand=parseFloat(input1.value)
-        operator='*';
-        input1.value='*';
+        operator='/';
+        input1.value='/';
         operatorStatus=true;
     }
 })
 
 remainderBtn.addEventListener('click', () => {
-    if(input1.value.slice(-1)==='.'){
+    if(resultStatus===true){
+        operator='%';
+        handleOperator();
+        firstOperand=result;
+        operatorStatus=true;
+    }
+    else if(input1.value.slice(-1)==='.'){
         
     }
     else{
@@ -444,12 +474,9 @@ function handleResult(){
     }
 }
 
-/*
+
 function handleOperator(){
-    if(resultStatus===true){
-        input1.value=displayResult.textContent;
+        input1.value=result+operator;
+        displayResult.innerHTML='';
         resultStatus=false;
-        console.log(displayResult.innerHTML);
-    }
 }
-*/
