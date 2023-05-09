@@ -27,8 +27,9 @@ const dotBtn = document.getElementById('dotBtn')
 const input1 = document.getElementById('input1')
 const displayResult = document.getElementById('displayResult')
 
-resultStatus = false;
-operatorStatus = false;
+let resultStatus = false;
+let operatorStatus = false;
+let getSecondOperand= false;
 let firstOperand;
 let secondOperand;
 let operator;
@@ -63,13 +64,13 @@ plusBtn.addEventListener('click', () => {
         firstOperand = result;
         operatorStatus = true;
     }
-    else if (input1.value.slice(-1) === '.') {
+    else if (input1.value.slice(-1) === '.' || input1.value==='') {
 
     }
     else {
         firstOperand = parseFloat(input1.value)
         operator = '+';
-        input1.value = '+';
+        input1.value = `${firstOperand}+`;
         operatorStatus = true;
     }
 })
@@ -81,13 +82,13 @@ minusBtn.addEventListener('click', () => {
         firstOperand = result;
         operatorStatus = true;
     }
-    else if (input1.value.slice(-1) === '.') {
+    else if (input1.value.slice(-1) === '.' || input1.value==='') {
 
     }
     else {
         firstOperand = parseFloat(input1.value)
         operator = '-';
-        input1.value = '-';
+        input1.value = `${firstOperand}-`;
         operatorStatus = true;
     }
 })
@@ -99,13 +100,13 @@ multiplyBtn.addEventListener('click', () => {
         firstOperand = result;
         operatorStatus = true;
     }
-    else if (input1.value.slice(-1) === '.') {
+    else if (input1.value.slice(-1) === '.' || input1.value==='') {
 
     }
     else {
         firstOperand = parseFloat(input1.value)
         operator = '*';
-        input1.value = '*';
+        input1.value = `${firstOperand}*`;
         operatorStatus = true;
     }
 })
@@ -117,13 +118,13 @@ divideBtn.addEventListener('click', () => {
         firstOperand = result;
         operatorStatus = true;
     }
-    else if (input1.value.slice(-1) === '.') {
+    else if (input1.value.slice(-1) === '.' || input1.value==='') {
 
     }
     else {
         firstOperand = parseFloat(input1.value)
         operator = '/';
-        input1.value = '/';
+        input1.value = `${firstOperand}/`;
         operatorStatus = true;
     }
 })
@@ -135,13 +136,13 @@ remainderBtn.addEventListener('click', () => {
         firstOperand = result;
         operatorStatus = true;
     }
-    else if (input1.value.slice(-1) === '.') {
+    else if (input1.value.slice(-1) === '.' || input1.value==='') {
 
     }
     else {
         firstOperand = parseFloat(input1.value)
         operator = '%';
-        input1.value = '%';
+        input1.value = `${firstOperand}%`;
         operatorStatus = true;
     }
 })
