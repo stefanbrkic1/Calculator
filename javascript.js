@@ -36,28 +36,34 @@ let result;
 
 //EQUAL BUTTON, GETTING SECOND OPERAND, OPERATING
 equalBtn.addEventListener('click', () => {
-    resultStatus = true;
-    secondOperand = parseFloat(input1.value.substring(1));
-    operate();
-    if(firstOperand===0 || secondOperand===0 && operator==='/'){
-        alert("Error: **! Can't divide with zero !**")
-        displayResult.innerHTML='';
-        input1.value='';
-        firstOperand=undefined;
-        secondOperand=undefined;
+    if(firstOperand===undefined || operatorStatus===true){
+
     }
     else{
-        if (result.toString().includes('.')) {
-            displayResult.innerHTML = `=${result.toFixed(2)}`;
+        resultStatus = true;
+        secondOperand = parseFloat(input1.value.substring(1));
+        operate();
+        if(firstOperand===0 || secondOperand===0 && operator==='/'){
+            alert("Error: **! Can't divide with zero !**")
+            displayResult.innerHTML='';
+            input1.value='';
             firstOperand=undefined;
             secondOperand=undefined;
         }
-        else {
-            displayResult.innerHTML = `=${result}`;
-            firstOperand=undefined;
-            secondOperand=undefined;
+        else{
+            if (result.toString().includes('.')) {
+                displayResult.innerHTML = `=${result.toFixed(2)}`;
+                firstOperand=undefined;
+                secondOperand=undefined;
+            }
+            else {
+                displayResult.innerHTML = `=${result}`;
+                firstOperand=undefined;
+                secondOperand=undefined;
+            }
         }
     }
+   
 })
 //
 
