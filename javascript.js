@@ -568,10 +568,14 @@ function operate() {
 }
 
 ACBtn.addEventListener('click', () => {
-    input1.value = '';
-    displayResult.innerHTML = '';
+    operatorStatus=false;
     firstOperand = undefined;
     secondOperand = undefined;
+    operator=undefined;
+    resultStatus=false;
+    result=undefined;
+    input1.value = '';
+    displayResult.innerHTML = '';
 })
 
 CBtn.addEventListener('click', () => {
