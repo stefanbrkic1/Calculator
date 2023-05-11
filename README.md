@@ -6,6 +6,7 @@ An online calculator with basic arithmetic operations built using HTML5, CSS3 an
 
 * All basic operations are supported (divide, multiple, remainder, add, subtract).
 * Comes with options to __clear/delete__ a single input (backspace) OR __clear__ the whole display.
+* Keyboard inputs are supported for numbers, opertaors and other options.
 
 ## Acknowledgement
 
