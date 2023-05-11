@@ -16,19 +16,19 @@ Project inspiration from [The Odin Project](https://www.theodinproject.com/home)
 
 ### Technologies
 
-    • HTML 
-    • CSS
-    • JS
+    * HTML 
+    * CSS
+    * JS
 
 ### Tools
 
-    • Visual Studio Code 
-    • Linux Terminal
-    • Git and GitHub  
+    * Visual Studio Code 
+    * Linux Terminal
+    * Git and GitHub  
 
 ### Third Party Code
 
-    • [Google Fonts](https://fonts.google.com/)    
+    * [Google Fonts](https://fonts.google.com/)    
 
 ## Author
 
