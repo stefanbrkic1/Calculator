@@ -36,34 +36,34 @@ let result;
 
 //EQUAL BUTTON, GETTING SECOND OPERAND, OPERATING
 equalBtn.addEventListener('click', () => {
-    if(firstOperand===undefined || operatorStatus===true){
+    if (firstOperand === undefined || operatorStatus === true) {
 
     }
-    else{
+    else {
         resultStatus = true;
         secondOperand = parseFloat(input1.value.substring(1));
         operate();
-        if(firstOperand===0 || secondOperand===0 && operator==='/'){
+        if (firstOperand === 0 || secondOperand === 0 && operator === '/') {
             alert("Error: **! Can't divide with zero !**")
-            displayResult.innerHTML='';
-            input1.value='';
-            firstOperand=undefined;
-            secondOperand=undefined;
+            displayResult.innerHTML = '';
+            input1.value = '';
+            firstOperand = undefined;
+            secondOperand = undefined;
         }
-        else{
+        else {
             if (result.toString().includes('.')) {
                 displayResult.innerHTML = `=${result.toFixed(2)}`;
-                firstOperand=undefined;
-                secondOperand=undefined;
+                firstOperand = undefined;
+                secondOperand = undefined;
             }
             else {
                 displayResult.innerHTML = `=${result}`;
-                firstOperand=undefined;
-                secondOperand=undefined;
+                firstOperand = undefined;
+                secondOperand = undefined;
             }
         }
     }
-   
+
 })
 //
 
@@ -75,18 +75,26 @@ plusBtn.addEventListener('click', () => {
         firstOperand = result;
         operatorStatus = true;
     }
-    else if(firstOperand!==undefined && secondOperand===undefined){
-        secondOperand = parseFloat(input1.value.substring(1));
-        operate();
-        input1.value=`${result}+`;
-        firstOperand=result;
-        operator='+';
-        operatorStatus=true;
-        secondOperand=undefined;
-    }
-    else if (input1.value.slice(-1) === '.' || input1.value==='') {
+    else if (
+        input1.value.slice(-1) === '.' ||
+        input1.value === '' ||
+        input1.value.slice(-1) === '+' ||
+        input1.value.slice(-1) === '-' ||
+        input1.value.slice(-1) === '*' ||
+        input1.value.slice(-1) === '/' ||
+        input1.value.slice(-1) === '%') {
 
     }
+    else if (firstOperand !== undefined && secondOperand === undefined) {
+        secondOperand = parseFloat(input1.value.substring(1));
+        operate();
+        input1.value = `${result}+`;
+        firstOperand = result;
+        operator = '+';
+        operatorStatus = true;
+        secondOperand = undefined;
+    }
+
     else {
         firstOperand = parseFloat(input1.value)
         operator = '+';
@@ -102,17 +110,24 @@ minusBtn.addEventListener('click', () => {
         firstOperand = result;
         operatorStatus = true;
     }
-    else if(firstOperand!==undefined && secondOperand===undefined){
+    else if (
+        input1.value.slice(-1) === '.' ||
+        input1.value === '' ||
+        input1.value.slice(-1) === '+' ||
+        input1.value.slice(-1) === '-' ||
+        input1.value.slice(-1) === '*' ||
+        input1.value.slice(-1) === '/' ||
+        input1.value.slice(-1) === '%') {
+
+    }
+    else if (firstOperand !== undefined && secondOperand === undefined) {
         secondOperand = parseFloat(input1.value.substring(1));
         operate();
-        input1.value=`${result}-`;
-        firstOperand=result;
-        operator='-';
-        operatorStatus=true;
-        secondOperand=undefined;
-    }
-    else if (input1.value.slice(-1) === '.' || input1.value==='') {
-
+        input1.value = `${result}-`;
+        firstOperand = result;
+        operator = '-';
+        operatorStatus = true;
+        secondOperand = undefined;
     }
     else {
         firstOperand = parseFloat(input1.value)
@@ -129,17 +144,24 @@ multiplyBtn.addEventListener('click', () => {
         firstOperand = result;
         operatorStatus = true;
     }
-    else if(firstOperand!==undefined && secondOperand===undefined){
+    else if (
+        input1.value.slice(-1) === '.' ||
+        input1.value === '' ||
+        input1.value.slice(-1) === '+' ||
+        input1.value.slice(-1) === '-' ||
+        input1.value.slice(-1) === '*' ||
+        input1.value.slice(-1) === '/' ||
+        input1.value.slice(-1) === '%') {
+
+    }
+    else if (firstOperand !== undefined && secondOperand === undefined) {
         secondOperand = parseFloat(input1.value.substring(1));
         operate();
-        input1.value=`${result}*`;
-        firstOperand=result;
-        operator='*';
-        operatorStatus=true;
-        secondOperand=undefined;
-    }
-    else if (input1.value.slice(-1) === '.' || input1.value==='') {
-
+        input1.value = `${result}*`;
+        firstOperand = result;
+        operator = '*';
+        operatorStatus = true;
+        secondOperand = undefined;
     }
     else {
         firstOperand = parseFloat(input1.value)
@@ -156,17 +178,24 @@ divideBtn.addEventListener('click', () => {
         firstOperand = result;
         operatorStatus = true;
     }
-    else if(firstOperand!==undefined && secondOperand===undefined){
+    else if (
+        input1.value.slice(-1) === '.' ||
+        input1.value === '' ||
+        input1.value.slice(-1) === '+' ||
+        input1.value.slice(-1) === '-' ||
+        input1.value.slice(-1) === '*' ||
+        input1.value.slice(-1) === '/' ||
+        input1.value.slice(-1) === '%') {
+
+    }
+    else if (firstOperand !== undefined && secondOperand === undefined) {
         secondOperand = parseFloat(input1.value.substring(1));
         operate();
-        input1.value=`${result}/`;
-        firstOperand=result;
-        operator='/';
-        operatorStatus=true;
-        secondOperand=undefined;
-    }
-    else if (input1.value.slice(-1) === '.' || input1.value==='') {
-
+        input1.value = `${result}/`;
+        firstOperand = result;
+        operator = '/';
+        operatorStatus = true;
+        secondOperand = undefined;
     }
     else {
         firstOperand = parseFloat(input1.value)
@@ -183,17 +212,24 @@ remainderBtn.addEventListener('click', () => {
         firstOperand = result;
         operatorStatus = true;
     }
-    else if(firstOperand!==undefined && secondOperand===undefined){
+    else if (
+        input1.value.slice(-1) === '.' ||
+        input1.value === '' ||
+        input1.value.slice(-1) === '+' ||
+        input1.value.slice(-1) === '-' ||
+        input1.value.slice(-1) === '*' ||
+        input1.value.slice(-1) === '/' ||
+        input1.value.slice(-1) === '%') {
+
+    }
+    else if (firstOperand !== undefined && secondOperand === undefined) {
         secondOperand = parseFloat(input1.value.substring(1));
         operate();
-        input1.value=`${result}%`;
-        firstOperand=result;
-        operator='%';
-        operatorStatus=true;
-        secondOperand=undefined;
-    }
-    else if (input1.value.slice(-1) === '.' || input1.value==='') {
-
+        input1.value = `${result}%`;
+        firstOperand = result;
+        operator = '%';
+        operatorStatus = true;
+        secondOperand = undefined;
     }
     else {
         firstOperand = parseFloat(input1.value)
@@ -205,14 +241,14 @@ remainderBtn.addEventListener('click', () => {
 //
 
 dotBtn.addEventListener('click', () => {
-    if (input1.value.includes('.') || 
-        input1.value.trim() === "" || 
-        input1.value.slice(-1)==='+' || 
-        input1.value.slice(-1)==='-' || 
-        input1.value.slice(-1)==='*' || 
-        input1.value.slice(-1)==='/' || 
-        input1.value.slice(-1)==='%' ||
-        resultStatus===true) {
+    if (input1.value.includes('.') ||
+        input1.value.trim() === "" ||
+        input1.value.slice(-1) === '+' ||
+        input1.value.slice(-1) === '-' ||
+        input1.value.slice(-1) === '*' ||
+        input1.value.slice(-1) === '/' ||
+        input1.value.slice(-1) === '%' ||
+        resultStatus === true) {
 
     }
     else {
@@ -534,8 +570,8 @@ function operate() {
 ACBtn.addEventListener('click', () => {
     input1.value = '';
     displayResult.innerHTML = '';
-    firstOperand=undefined;
-    secondOperand=undefined;
+    firstOperand = undefined;
+    secondOperand = undefined;
 })
 
 CBtn.addEventListener('click', () => {
@@ -559,3 +595,69 @@ function handleOperator() {
     displayResult.innerHTML = '';
     resultStatus = false;
 }
+
+//KEYBOARD SUPPORT
+
+document.addEventListener('keydown', function(event){
+    console.log(event.key)
+    if(event.key==='0'){
+        zeroBtn.click();
+    }
+    else if(event.key==='1'){
+        oneBtn.click();
+    }
+    else if(event.key==='2'){
+        twoBtn.click();
+    }
+    else if(event.key==='3'){
+        threeBtn.click();
+    }
+    else if(event.key==='4'){
+        fourBtn.click();
+    }
+    else if(event.key==='5'){
+        fiveBtn.click();
+    }
+    else if(event.key==='6'){
+        sixBtn.click();
+    }
+    else if(event.key==='7'){
+        sevenBtn.click();
+    }
+    else if(event.key==='8'){
+        eightBtn.click();
+    }
+    else if(event.key==='9'){
+        nineBtn.click();
+    }
+    else if(event.key==='.'){
+        dotBtn.click();
+    }
+    else if(event.key==='+'){
+        plusBtn.click();
+    }
+    else if(event.key==='-'){
+        minusBtn.click();
+    }
+    else if(event.key==='*'){
+        multiplyBtn.click();
+    }
+    else if(event.key==='/'){
+        divideBtn.click();
+    }
+    else if(event.key==='%'){
+        remainderBtn.click();
+    }
+    else if(event.key==='Enter'){
+        equalBtn.click();
+    }
+    else if(event.key==='Backspace'){
+        CBtn.click();
+    }
+    else if(event.key==='Escape'){
+        ACBtn.click();
+    }
+})
+
+
+//
